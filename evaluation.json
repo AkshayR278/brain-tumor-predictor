@@ -1,0 +1,83 @@
+{
+  "class_names": [
+    "glioma",
+    "meningioma",
+    "notumor",
+    "pituitary"
+  ],
+  "classification_report": {
+    "accuracy": 0.883125,
+    "glioma": {
+      "f1-score": 0.7965367965367965,
+      "precision": 0.9419795221843004,
+      "recall": 0.69,
+      "support": 400.0
+    },
+    "macro avg": {
+      "f1-score": 0.8794663016068345,
+      "precision": 0.8880942374712705,
+      "recall": 0.8831249999999999,
+      "support": 1600.0
+    },
+    "meningioma": {
+      "f1-score": 0.8253588516746412,
+      "precision": 0.7912844036697247,
+      "recall": 0.8625,
+      "support": 400.0
+    },
+    "notumor": {
+      "f1-score": 0.943127962085308,
+      "precision": 0.8963963963963963,
+      "recall": 0.995,
+      "support": 400.0
+    },
+    "pituitary": {
+      "f1-score": 0.9528415961305925,
+      "precision": 0.9227166276346604,
+      "recall": 0.985,
+      "support": 400.0
+    },
+    "weighted avg": {
+      "f1-score": 0.8794663016068347,
+      "precision": 0.8880942374712706,
+      "recall": 0.883125,
+      "support": 1600.0
+    }
+  },
+  "confusion_matrix": [
+    [
+      276,
+      87,
+      24,
+      13
+    ],
+    [
+      14,
+      345,
+      21,
+      20
+    ],
+    [
+      1,
+      1,
+      398,
+      0
+    ],
+    [
+      2,
+      3,
+      1,
+      394
+    ]
+  ],
+  "dataset": "masoudnickparvar/brain-tumor-mri-dataset",
+  "epochs_completed": 10,
+  "image_size": [
+    128,
+    128
+  ],
+  "seed": 42,
+  "test_accuracy": 0.883125,
+  "test_loss": 0.4791077673435211,
+  "validation_split": 0.15
+}
