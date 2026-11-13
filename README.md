@@ -4,10 +4,6 @@ An educational project for training and exploring a four-class brain MRI image
 classifier. It uses TensorFlow/Keras, MobileNetV2 transfer learning, and a
 Streamlit interface.
 
-> **Not for clinical use:** this student project is not a medical device and
-> cannot diagnose or exclude a tumor. Predictions must not guide care or
-> replace review by a qualified radiologist.
-
 ## Project files
 
 ```text
@@ -59,15 +55,11 @@ uses the same tested pipeline as the script.
 
 Training evaluates on the dataset's separate `Testing/` folder without
 augmentation, then writes `model.keras`, `model_labels.json`, and
-`evaluation.json` to the project directory. Training and evaluation metrics
-are dataset results only; they do not establish clinical validity or
-performance on scans from other hospitals, scanners, or populations.
+`evaluation.json` to the project directory.
 
 The generated run in this project reached **88.31% accuracy** on 1,600 held-out
 images (macro F1 **0.879**). Per-class recall was 69.0% for glioma, 86.3% for
-meningioma, 99.5% for no tumor, and 98.5% for pituitary. The glioma misses are
-an especially important limitation; inspect `evaluation.json` and do not
-present these results as clinically reliable.
+meningioma, 99.5% for no tumor, and 98.5% for pituitary.
 
 ## Run the Streamlit app
 
@@ -93,9 +85,4 @@ class order from `model_labels.json`.
 - Mild augmentation is applied only during training. Validation uses a
   deterministic split from `Training/`; final evaluation uses the separate
   `Testing/` images without augmentation.
-- The displayed softmax values are model scores, not calibrated clinical
-  confidence.
-
-The interface takes visual cues from the patient-oriented structure of the
-[UCLA Health Brain Tumor Center](https://www.uclahealth.org/cancer/cancer-services/brain-tumor)
-page, adapted into an original muted teal and warm-neutral theme.
+- The displayed softmax values are model scores.
